@@ -8,21 +8,31 @@ function beepBoop(){
   var includes1 = num.includes("1");
   var includes0 = num.includes("0");
   
-  console.log("number was " + num);
+  var beep = false;
+  var boop = false;
+  var error = false;
+  
   if (parseInt(num) % 3 === 0) {
-      msg = "I'm sorry " + name + ". I'm afraid I can't do that."; 
-    } else if (includes1){
-      msg = "Boop!";
-    } else if (includes0) {
-      msg = "Beep!";
+    msg = "I'm sorry " + name + ". I'm afraid I can't do that.";
+    error= true;    
+  } else if (includes1){
+    msg = "Boop!";
+    boop = true;
+  } else if (includes0) {
+    msg = "Beep!";
+    beep = true;
     } else {
-      msg = num;
-    }
+    msg = num;
   }
-
-
-
-
+  
+  if(error){
+  $("#error")[0].play();
+  } else if (boop) {
+  $("#boop")[0].play();
+  } else if (beep) {
+  $("#beep")[0].play();
+  }   
+}
 
 // Front-end Logic
 $(document).ready(function(){
