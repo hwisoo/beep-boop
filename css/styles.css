@@ -7,4 +7,9 @@ input {
 }
 #output {
  margin-top: 20px;
+ display: none;
+}
+
+li {
+  font-weight: bold; 
 }

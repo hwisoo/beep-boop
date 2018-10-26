@@ -25,7 +25,7 @@ function beepBoop(){
     beep = true;
     } else {
     msg = num;
-  }
+  };
   
   // Play audio based on condition
   if(error){
@@ -34,14 +34,20 @@ function beepBoop(){
   $("#boop")[0].play();
   } else if (beep) {
   $("#beep")[0].play();
-  }   
-}
+  };   
+};
 
 // Front-end Logic
 $(document).ready(function(){
   $("form#form").submit(function(){
-    event.preventDefault();
-    beepBoop();
+    event.preventDefault();  
+    
+    beepBoop(); 
+    
     $("#output").append("<li>" + msg + "</li>");
+    $("li:contains('eep')").css('color','blue').css('list-style-type','circle');
+    $("li:contains('oop')").css('color','green').css('list-style-type', 'square');
+    $("li:contains('sorry')").css('color','red');
+    $("#output").fadeIn();
   });
 });
