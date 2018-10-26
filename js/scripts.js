@@ -2,7 +2,8 @@
 var msg = "";
 
 function beepBoop(){
-
+  
+  // Declare Variables
   var name = $("input#name").val();
   var num = $("input#number").val();
   var includes1 = num.includes("1");
@@ -12,6 +13,7 @@ function beepBoop(){
   var boop = false;
   var error = false;
   
+  // Check condition and assign message
   if (parseInt(num) % 3 === 0) {
     msg = "I'm sorry " + name + ". I'm afraid I can't do that.";
     error= true;    
@@ -25,6 +27,7 @@ function beepBoop(){
     msg = num;
   }
   
+  // Play audio based on condition
   if(error){
   $("#error")[0].play();
   } else if (boop) {
