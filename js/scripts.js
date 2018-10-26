@@ -1,11 +1,16 @@
 // Back-end Logic
-var num = parseInt($("#number").val());
-var msg;
+function beepBoop(){
 
+  var num = $("input#number").val();
+  var msg = "";
+  console.log("number was " + num);
 if (num % 3 === 0) {
-  msg = "I'm sorry. I'm afraid I can't do that."
+  msg = "I'm sorry. I'm afraid I can't do that."; 
 } 
 
+
+$("#output").append("<li>" + msg + "</li>");
+}
 
 
 
@@ -15,5 +20,7 @@ if (num % 3 === 0) {
 $(document).ready(function(){
   $("form#form").submit(function(){
     event.preventDefault();
+    beepBoop();
+    
   });
 });
