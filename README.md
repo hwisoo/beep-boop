@@ -6,7 +6,7 @@
 
 ## Description
 
-####_a web application that takes a number from a user and returns a range of numbers from 0 to the user inputted number with the following exceptions:
+#### _A web application that takes a number from a user and returns a range of numbers from 0 to the user inputted number with the following exceptions:
   * Numbers that contain a 0 are replaced (all digits) with "Beep!"
   * Numbers that contain a 1 are replaced (all digits) with "Boop!"
   * Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that."
@@ -20,7 +20,7 @@
     - Example Output : ["Boop!"]
   * Program replaces numbers divisible by 3 with "I'm sorry. I'm afraid I can't do that."
     - Example Input : 9
-    - Example Output : ["I'm sorry. I'm afraid I can't do that"]
+    - Example Output : ["I'm sorry. I'm afraid I can't do that."]
 
 ## Setup/Installation Requirements
 
