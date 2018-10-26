@@ -10,18 +10,15 @@ function beepBoop(){
   
   console.log("number was " + num);
   if (parseInt(num) % 3 === 0) {
-    msg = "I'm sorry " + name + ". I'm afraid I can't do that."; 
-  } else if (includes1){
-    msg = "Boop!";
-  } else if (includes0) {
-    msg = "Beep!";
-  } else {
-    msg = num;
+      msg = "I'm sorry " + name + ". I'm afraid I can't do that."; 
+    } else if (includes1){
+      msg = "Boop!";
+    } else if (includes0) {
+      msg = "Beep!";
+    } else {
+      msg = num;
+    }
   }
-
-
-
-}
 
 
 
