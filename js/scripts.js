@@ -1,31 +1,45 @@
 // Back-end Logic
 var msg = "";
+var item = "";
 
 function beepBoop(){
   
   // Declare Variables
   var name = $("input#name").val();
-  var num = $("input#number").val();
-  var includes1 = num.includes("1");
-  var includes0 = num.includes("0");
+  var num = parseInt($("input#number").val());
+  var array = [];
+
+  for (let i=0; i <num; i++) {
+    array.push(i);  
+  }
+  
+  
+  array.forEach(function(item,x){
+    item.toString();
+    if(item.includes("0")) {
+      array[x] ="Beep!";
+  } else if (item.includes("1")){
+      array[x] = "Boop!";
+  } else if (item % 3 == 0){
+      array[x] = "I'm sorry " + name + ". I'm afraid I can't do that.";
+  }
+  });
+
+  console.log(array);
+
+
+
+
+  
+  // console.log(num);
+  // var includes1 = num.includes("1");
+  // var includes0 = num.includes("0");
   
   var beep = false;
   var boop = false;
   var error = false;
-  
-  // Check condition and assign message
-  if (parseInt(num) % 3 === 0) {
-    msg = "I'm sorry " + name + ". I'm afraid I can't do that.";
-    error= true;    
-  } else if (includes1){
-    msg = "Boop!";
-    boop = true;
-  } else if (includes0) {
-    msg = "Beep!";
-    beep = true;
-    } else {
-    msg = num;
-  };
+  num = Array.from(num.toString()).map(Number);
+
   
   // Play audio based on condition
   if(error){
@@ -44,7 +58,7 @@ $(document).ready(function(){
     
     beepBoop(); 
     
-    $("#output").append("<li>" + msg + "</li>");
+    $("#output").append("<li>" + item + "</li>");
     $("li:contains('eep')").css('color','blue').css('list-style-type','circle');
     $("li:contains('oop')").css('color','green').css('list-style-type', 'square');
     $("li:contains('sorry')").css('color','red');
