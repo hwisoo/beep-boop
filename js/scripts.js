@@ -1,21 +1,25 @@
 // Back-end Logic
 var msg = "";
-var item = "";
 
 function beepBoop(){
   
   // Declare Variables
   var name = $("input#name").val();
   var num = parseInt($("input#number").val());
-  var array = [];
+  var numbers = [];
 
-  for (let i=0; i <num; i++) {
-    array.push(i);  
+  for (let i=0; i <= num; i++) {
+    numbers.push(i);  
   }
+  console.log(numbers);
+  var strNumbers = numbers.map(function(e){
+    return e.toString()
+  });
   
-  
+  console.log(strNumbers);
+
   array.forEach(function(item,x){
-    item.toString();
+    
     if(item.includes("0")) {
       array[x] ="Beep!";
   } else if (item.includes("1")){
@@ -25,7 +29,7 @@ function beepBoop(){
   }
   });
 
-  console.log(array);
+  
 
 
 
