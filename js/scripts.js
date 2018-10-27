@@ -18,17 +18,18 @@ function beepBoop(){
   
   console.log(strNumbers);
 
-  array.forEach(function(item,x){
+  strNumbers.map(function(item,x){
     
     if(item.includes("0")) {
-      array[x] ="Beep!";
+      strNumbers[x] ="Beep!";
   } else if (item.includes("1")){
-      array[x] = "Boop!";
+      strNumbers[x] = "Boop!";
   } else if (item % 3 == 0){
-      array[x] = "I'm sorry " + name + ". I'm afraid I can't do that.";
+      strNumbers[x] = "I'm sorry " + name + ". I'm afraid I can't do that.";
   }
   });
 
+  console.log(strNumbers);
   
 
 
